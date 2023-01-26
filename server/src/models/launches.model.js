@@ -1,4 +1,4 @@
-const launches = new Map();
+const launches = new Map(); //lookup flight
 
 let latestFlightNumber = 100;
 
@@ -16,6 +16,10 @@ const launch = {
 
 
 launches.set(launch.flightNumber, launch);
+
+function existsLaunchWithId(launchId) {
+    return launches.has(launchId);
+}
 
 function getAllLaunches() {
     return Array.from(launches.values());
@@ -35,7 +39,17 @@ function addNewLaunch(launch) {
     );
 }
 
+function abortLaunchById(launchId) {
+    // launches.delete(launchId);
+    const aborted = launches.get(launchId);
+    aborted.upcoming = false;
+    aborted.success = false;
+    return aborted;
+}
+
 module.exports = {
+    existsLaunchWithId,
     getAllLaunches,
-    addNewLaunch
+    addNewLaunch,
+    abortLaunchById,
 }

@@ -27,14 +27,18 @@ function loadPlanetsData() {
                 reject(err);
             })
             .on('end', () => {
-                // console.log(`${habitablePlanet.length} habitable planets found`);
+                console.log(`${habitablePlanet.length} habitable planets found`);
                 resolve();
             });
 
     });
 }
 
+function getAllPlanets() {
+    return habitablePlanet;
+}
+
 module.exports = {
     loadPlanetsData,
-    planets: habitablePlanet,
+    getAllPlanets,
 };

@@ -13,8 +13,6 @@ const launch = {
     success: true,
 };
 
-
-
 launches.set(launch.flightNumber, launch);
 
 function existsLaunchWithId(launchId) {

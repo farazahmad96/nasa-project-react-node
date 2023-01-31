@@ -7,7 +7,8 @@
     "test": "jest",
     "test-watch": "jest --watch",
     "watch": "nodemon src/server.js",
-    "start": "node src/server.js"
+    "start": "node src/server.js",
+    "cluster": "pm2 start src/server.js -i max"
   },
   "keywords": [],
   "author": "",
@@ -16,7 +17,9 @@
     "cors": "^2.8.5",
     "csv-parse": "^5.3.3",
     "express": "^4.18.2",
-    "nasa-project": "file:.."
+    "morgan": "^1.10.0",
+    "nasa-project": "file:..",
+    "pm2": "^5.2.2"
   },
   "devDependencies": {
     "jest": "^29.4.0",

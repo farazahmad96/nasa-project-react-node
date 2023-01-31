@@ -36,3 +36,7 @@ const launchesSchema = new mongoose.Schema({
         default: true
     },
 });
+
+//Connect launchesSchema with the "launches" collections
+//first argument should be singular
+module.exports = mongoose.model('Launch', launchesSchema);

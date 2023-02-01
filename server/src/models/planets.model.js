@@ -41,8 +41,8 @@ function loadPlanetsData() {
     });
 }
 
-function getAllPlanets() {
-    return planets.find({});
+async function getAllPlanets() {
+    return await planets.find({});
 }
 
 module.exports = {
